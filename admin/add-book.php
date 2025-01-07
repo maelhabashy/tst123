@@ -85,11 +85,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="main-content">
     <h2>Add Book</h2>
     <form method="POST" enctype="multipart/form-data">
-        <label for="title">Title:</label>
-        <input type="text" name="title" required>
+        <label class="form-label" for="title">Title:</label>
+        <input class="form-control" type="text" name="title" required>
         
-        <label for="author_id">Author:</label>
-        <select name="author_id" required>
+        <label class="form-label" for="author_id">Author:</label>
+        <select class="form-select" name="author_id" required>
             <?php
             $authors = $conn->query("SELECT id, name FROM authors");
             while ($author = $authors->fetch_assoc()): ?>
@@ -97,8 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endwhile; ?>
         </select>
         
-        <label for="category_id">Category:</label>
-        <select name="category_id" required>
+        <label class="form-label" for="category_id">Category:</label>
+        <select class="form-select" name="category_id" required>
             <?php
             $categories = $conn->query("SELECT id, name FROM categories");
             while ($category = $categories->fetch_assoc()): ?>
@@ -106,17 +106,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endwhile; ?>
         </select>
         
-        <label for="description">Description:</label>
+        <label class="form-label" for="description">Description:</label>
         <textarea name="description" rows="5" required></textarea>
         
-        <label for="publication_date">Publication Date:</label>
-        <input type="date" name="publication_date" required>
+        <label class="form-label" for="publication_date">Publication Date:</label>
+        <input class="form-control" type="date" name="publication_date" required>
         
-        <label for="isbn">ISBN:</label>
-        <input type="text" name="isbn" required>
+        <label class="form-label" for="isbn">ISBN:</label>
+        <input class="form-control" type="text" name="isbn" required>
         
-        <label for="image">Book Cover Image:</label>
-        <input type="file" name="image" accept="image/*">
+        <label class="form-label" for="image">Book Cover Image:</label>
+        <input class="form-control" type="file" name="image" accept="image/*">
         
         <button type="submit">Add Book</button>
     </form>

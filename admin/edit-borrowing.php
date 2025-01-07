@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="main-content">
     <h2>Edit Borrowing</h2>
     <form method="POST">
-        <label for="user_id">User:</label>
-        <select name="user_id" required>
+        <label class="form-label" for="user_id">User:</label>
+        <select class="form-select" name="user_id" required>
             <?php while ($user = $users->fetch_assoc()): ?>
                 <option value="<?= $user['id'] ?>" <?= $user['id'] == $borrowing['user_id'] ? 'selected' : '' ?>>
                     <?= $user['username'] ?>
@@ -47,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endwhile; ?>
         </select>
         
-        <label for="book_id">Book:</label>
-        <select name="book_id" required>
+        <label class="form-label" for="book_id">Book:</label>
+        <select class="form-select" name="book_id" required>
             <?php while ($book = $books->fetch_assoc()): ?>
                 <option value="<?= $book['id'] ?>" <?= $book['id'] == $borrowing['book_id'] ? 'selected' : '' ?>>
                     <?= $book['title'] ?>
@@ -56,11 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endwhile; ?>
         </select>
         
-        <label for="borrow_date">Borrow Date:</label>
-        <input type="date" name="borrow_date" value="<?= $borrowing['borrow_date'] ?>" required>
+        <label class="form-label" for="borrow_date">Borrow Date:</label>
+        <input class="form-control" type="date" name="borrow_date" value="<?= $borrowing['borrow_date'] ?>" required>
         
-        <label for="return_date">Return Date:</label>
-        <input type="date" name="return_date" value="<?= $borrowing['return_date'] ?>">
+        <label class="form-label" for="return_date">Return Date:</label>
+        <input class="form-control" type="date" name="return_date" value="<?= $borrowing['return_date'] ?>">
         
         <button type="submit">Update Borrowing</button>
     </form>

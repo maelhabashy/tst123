@@ -1,75 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-  /* Modern Design */
-  body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #0e0e0e;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .navbar .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-        }
-        .navbar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        .navbar ul li {
-            margin-left: 20px;
-        }
-        .navbar ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .navbar ul li a:hover {
-            text-decoration: underline;
-        }
-
-footer {
-            background-color: #0e0e0e;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 40px;
-        }
-
-    </style>
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-    <div class="logo"> <img src="img/Logo.png" alt="Logo" width="100" height="100" title="Online Library" /> </div>
-    <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="books.php">Books</a></li>
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <li><a href="user-profile.php">User Profile</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            <?php else: ?>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-            <?php endif; ?>
-        </ul>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <div class="logo">
+                <a class="navbar-brand" href="index.php"><img src="img/Logo.png" alt="Logo" title="Online Library" /></a>
+
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="books.php">Books</a>
+                    </li>
+
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="btn"><a href="user-profile.php">User Profile</a></li>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                            <li><a href="./admin/index.php">Admin Dashboard</a></li>
+                        <?php endif; ?>
+                        <li class="logout"><a href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li class="btn"><a href="login.php">Login</a></li>
+                        <li class="logout"><a href="register.php">Register</a></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
     </nav>
- 

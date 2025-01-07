@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <form method="POST">
     <h2 align="center">Add Category</h2>
-        <label for="name">Category Name:</label>
-        <input type="text" name="name" required>
+        <label class="form-label" for="name">Category Name:</label>
+        <input class="form-control" type="text" name="name" required>
         <button type="submit">Add Category</button>
     </form>
 </div>

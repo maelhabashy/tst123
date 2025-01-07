@@ -125,7 +125,7 @@ $total_pages = ceil($total_books / $results_per_page);
     <!-- Search Bar -->
     <div class="search-bar">
         <form method="GET" action="list-books.php">
-            <input type="text" name="search" placeholder="Search by title, author, or category" value="<?= htmlspecialchars($search) ?>">
+            <input class="form-control" type="text" name="search" placeholder="Search by title, author, or category" value="<?= htmlspecialchars($search) ?>">
             <button type="submit">Search</button>
         </form>
     </div>

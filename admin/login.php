@@ -134,8 +134,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Login Form -->
         <form method="POST">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
+            <input class="form-control" type="email" name="email" placeholder="Email" required>
+            <input class="form-control" type="password" name="password" placeholder="Password" required>
             <button type="submit">Log In</button>
         </form>
 

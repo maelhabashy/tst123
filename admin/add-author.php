@@ -33,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="main-content">
     <h2>Add Author</h2>
     <form method="POST">
-        <label for="name">Author Name:</label>
-        <input type="text" name="name" required>
+        <label class="form-label" for="name">Author Name:</label>
+        <input class="form-control" type="text" name="name" required>
         
-        <label for="bio">Biography:</label>
+        <label class="form-label" for="bio">Biography:</label>
         <textarea name="bio" rows="5" required></textarea>
         
         <button type="submit">Add Author</button>

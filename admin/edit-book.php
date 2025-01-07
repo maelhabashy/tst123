@@ -109,11 +109,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="main-content">
     <h2>Edit Book</h2>
     <form method="POST" enctype="multipart/form-data">
-        <label for="title">Title:</label>
-        <input type="text" name="title" value="<?= $book['title'] ?>" required>
+        <label class="form-label" for="title">Title:</label>
+        <input class="form-control" type="text" name="title" value="<?= $book['title'] ?>" required>
         
-        <label for="author_id">Author:</label>
-        <select name="author_id" required>
+        <label class="form-label" for="author_id">Author:</label>
+        <select class="form-select" name="author_id" required>
             <?php while ($author = $authors->fetch_assoc()): ?>
                 <option value="<?= $author['id'] ?>" <?= $author['id'] == $book['author_id'] ? 'selected' : '' ?>>
                     <?= $author['name'] ?>
@@ -121,8 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endwhile; ?>
         </select>
         
-        <label for="category_id">Category:</label>
-        <select name="category_id" required>
+        <label class="form-label" for="category_id">Category:</label>
+        <select class="form-select" name="category_id" required>
             <?php while ($category = $categories->fetch_assoc()): ?>
                 <option value="<?= $category['id'] ?>" <?= $category['id'] == $book['category_id'] ? 'selected' : '' ?>>
                     <?= $category['name'] ?>
@@ -130,22 +130,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endwhile; ?>
         </select>
         
-        <label for="description">Description:</label>
+        <label class="form-label" for="description">Description:</label>
         <textarea name="description" rows="5" required><?= $book['description'] ?></textarea>
         
-        <label for="publication_date">Publication Date:</label>
-        <input type="date" name="publication_date" value="<?= $book['publication_date'] ?>" required>
+        <label class="form-label" for="publication_date">Publication Date:</label>
+        <input class="form-control" type="date" name="publication_date" value="<?= $book['publication_date'] ?>" required>
         
-        <label for="isbn">ISBN:</label>
-        <input type="text" name="isbn" value="<?= $book['isbn'] ?>" required>
+        <label class="form-label" for="isbn">ISBN:</label>
+        <input class="form-control" type="text" name="isbn" value="<?= $book['isbn'] ?>" required>
         
         <div class="current-image">
-            <label>Current Image:</label>
+            <label class="form-label">Current Image:</label>
             <img src="../img/<?= $book['image'] ?>" alt="<?= $book['title'] ?>">
         </div>
         
-        <label for="image">Upload New Image:</label>
-        <input type="file" name="image" accept="image/*">
+        <label class="form-label" for="image">Upload New Image:</label>
+        <input class="form-control" type="file" name="image" accept="image/*">
         
         <button type="submit">Update Book</button>
     </form>

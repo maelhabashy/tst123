@@ -36,17 +36,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="form-container">
         <h2>Add User</h2>
         <form method="POST">
-            <label for="username">Username:</label>
-            <input type="text" name="username" required>
+            <label class="form-label" for="username">Username:</label>
+            <input class="form-control" type="text" name="username" required>
             
-            <label for="email">Email:</label>
-            <input type="email" name="email" required>
+            <label class="form-label" for="email">Email:</label>
+            <input class="form-control" type="email" name="email" required>
             
-            <label for="password">Password:</label>
-            <input type="password" name="password" required>
+            <label class="form-label" for="password">Password:</label>
+            <input class="form-control" type="password" name="password" required>
             
-            <label for="role">Role:</label>
-            <select name="role" required>
+            <label class="form-label" for="role">Role:</label>
+            <select class="form-select" name="role" required>
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
             </select>
